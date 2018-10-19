@@ -92,4 +92,24 @@ void List::remove(int k)
 	}
 	
 	//Implementations of missing operations
+	int List::get(int k)
+	{
+		if ( k > num_elements or k<1)
+		throw out_of_range("List::get(" +to_string(k)+") failed. (values indicates are 1 to"+to_string(num_elements+1)+")");
+
+		Node* tmpPtr = frontPtr;
+		for(int i = 1; i!= k;i++)
+		{
+			tmpPtr=tmpPtr->link;
+		}
+		return tmpPtr->data;
+		
+		
+	}
+	
+	void List:: clear ()
+	{
+		while (size()!=0)
+		remove (1);
+		}
 	
