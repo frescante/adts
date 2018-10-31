@@ -7,20 +7,17 @@ int Stack::size()
 }
 void Stack::push(int x)
 {
-	 data.push_back(x);
+	 data.insert(x,1);
 }
-void Stack::pop();
+void Stack::pop()
 {
-	 data.pop_back();
+	 data.remove(1);
 }
 int Stack::top()
 {
-	int i = 0;
-	i = data.size()-1;
-	return data[i];
+	return data.get(1);
 }
 void Stack::clear()
 {
-	 while (size() !=0)
-	 data.pop_back();
+	 data.clear();
 }

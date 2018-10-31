@@ -13,8 +13,8 @@ int main()
 L1.insert(5,1);
 L1.insert(8,1);
 L1.remove(1);
-L2.insert(20,1);
-L2.insert(30,1);
+L2.insert(80,1);
+L2.insert(10,1);
 L1.get(1);
 L2.get(2);
 

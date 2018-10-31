@@ -14,27 +14,33 @@ class Stack::Node //self-referential Node class
 Stack::~Stack()
 {
 	while(num_elements > 0)
-      clear(1);
+      clear();
 }
 int Stack::size()
 {
-    
+    return num_elements;
 }
 void Stack::push(int x)
 {
-	Node* newPtr = new Node{val};
+	Node* newPtr = new Node{x};
 	newPtr -> link= frontPtr;
-	front
+	frontPtr = newPtr;
+	num_elements++;
 }
-void Stack::pop();
+void Stack::pop()
 {
-	 
+	 Node* delPtr = frontPtr;
+	 frontPtr = frontPtr->link;
+	 delete delPtr;
+	 num_elements--;
 }
-void Stack::top()
+int Stack::top()
 {
-	 
+	 return frontPtr->data;
 }
+	 
 void Stack::clear()
 {
-	
+	while (size()!=0)
+		pop();
 }
